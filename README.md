@@ -17,6 +17,7 @@ Detail tentang Struktur Aplikasi Web
     vendor/: Dependensi composer.
     
 Pengaturan Database: MySQL:
+
     Host: 127.0.0.1
     Port: 3306 
     Username: root
@@ -24,26 +25,36 @@ Pengaturan Database: MySQL:
 
 Instruksi tentang Cara Menjalankan Aplikasi Web:
     Clone Repository & Install Tool Yang Dibutuhkan:
+    
         git clone https://github.com/Phirkuadrat/Management-Employee.git
         cd C:\laragon\www\Management-Employee (Menyesuaikan Direktori Instalasi Laragon)
         composer install
         npm install
         cp .env.example .env
+        
     Perbarui .env dengan Konfigurasi Database:
+    
         DB_CONNECTION=mysql
         DB_HOST=127.0.0.1
         DB_PORT=3306
         DB_DATABASE=management_employee
         DB_USERNAME=root
         DB_PASSWORD=
+        
     Generate Kunci Aplikasi:
+    
         php artisan key:generate
+        
     Jalankan Migrasi Database:
+        
         php artisan migrate
+    
     Jalankan Server Pengembangan:
+        
         php artisan serve
 
 Proses Deployment Ke Heroku:
+
     Install Heroku CLI dan Login:
         heroku login
     Buat Aplikasi di Heroku:
