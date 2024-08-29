@@ -24,8 +24,8 @@ Pengaturan Database: MySQL:
     Password:
 
 Instruksi tentang Cara Menjalankan Aplikasi Web:
+
     Clone Repository & Install Tool Yang Dibutuhkan:
-    
         git clone https://github.com/Phirkuadrat/Management-Employee.git
         cd C:\laragon\www\Management-Employee (Menyesuaikan Direktori Instalasi Laragon)
         composer install
@@ -33,7 +33,6 @@ Instruksi tentang Cara Menjalankan Aplikasi Web:
         cp .env.example .env
         
     Perbarui .env dengan Konfigurasi Database:
-    
         DB_CONNECTION=mysql
         DB_HOST=127.0.0.1
         DB_PORT=3306
@@ -42,25 +41,25 @@ Instruksi tentang Cara Menjalankan Aplikasi Web:
         DB_PASSWORD=
         
     Generate Kunci Aplikasi:
-    
         php artisan key:generate
         
     Jalankan Migrasi Database:
-        
         php artisan migrate
     
     Jalankan Server Pengembangan:
-        
         php artisan serve
 
 Proses Deployment Ke Heroku:
 
     Install Heroku CLI dan Login:
         heroku login
+        
     Buat Aplikasi di Heroku:
         heroku create
+        
     Push Kode ke Heroku:
         git push heroku master
+        
     Jalankan Migrasi Database di Heroku:
         heroku run php artisan migrate
 
