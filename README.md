@@ -1,7 +1,68 @@
-<<<<<<< HEAD
 # Management-Employee
 Simple web management employee using laravel
 =======
+Detail tentang Struktur Aplikasi Web
+
+    app/: Kode sumber utama aplikasi.
+    Http/: Kontroller, middleware, dan request.
+    Models/: Model Eloquent.
+    Views/: Template Blade.
+    config/: File konfigurasi.
+    database/: Migrasi dan seed.
+    public/: Berkas publik seperti CSS, JavaScript, dan gambar.
+    resources/: Sumber daya seperti view dan bahasa.
+    routes/: Definisi rute aplikasi.
+    storage/: Log, cache, dan file yang diunggah.
+    tests/: Tes unit dan fitur.
+    vendor/: Dependensi composer.
+    
+Pengaturan Database: MySQL:
+
+    Host: 127.0.0.1
+    Port: 3306 
+    Username: root
+    Password:
+
+Instruksi tentang Cara Menjalankan Aplikasi Web:
+
+    Clone Repository & Install Tool Yang Dibutuhkan:
+        git clone https://github.com/Phirkuadrat/Management-Employee.git
+        cd C:\laragon\www\Management-Employee (Menyesuaikan Direktori Instalasi Laragon)
+        composer install
+        npm install
+        cp .env.example .env
+        
+    Perbarui .env dengan Konfigurasi Database:
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=management_employee
+        DB_USERNAME=root
+        DB_PASSWORD=
+        
+    Generate Kunci Aplikasi:
+        php artisan key:generate
+        
+    Jalankan Migrasi Database:
+        php artisan migrate
+    
+    Jalankan Server Pengembangan:
+        php artisan serve
+
+Proses Deployment Ke Heroku:
+
+    Install Heroku CLI dan Login:
+        heroku login
+        
+    Buat Aplikasi di Heroku:
+        heroku create
+        
+    Push Kode ke Heroku:
+        git push heroku master
+        
+    Jalankan Migrasi Database di Heroku:
+        heroku run php artisan migrate
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
