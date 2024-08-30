@@ -54,9 +54,8 @@ class EmployeeController extends Controller
         return redirect('/')->with('success', 'Employee updated successfully.');
     }
 
-    public function search(Request $request)
-    {
-        $locations = Location::all(); 
+    public function search(Request $request){
+        $locations = Location::all();
         if (!$request->has('age') || $request->input('age') == '') {
             $employees = Employee::all();
         } else {
@@ -65,13 +64,12 @@ class EmployeeController extends Controller
             ]);
 
             $age = $request->input('age');
-            $minDate = now()->subYears($age + 1)->startOfDay();
-            $maxDate = now()->subYears($age)->endOfDay();
-            $employees = Employee::whereBetween('birth_date', [$minDate, $maxDate])
+            $cutoffDate = now()->subYears($age)->endOfDay(); // Menghitung tanggal batas maksimal
+
+            $employees = Employee::whereDate('birth_date', '<=', $cutoffDate)
                 ->where('location_code', 'JKT')
                 ->get();
         }
-
         return view('employee', compact('employees', 'locations'));
     }
 }
